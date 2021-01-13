@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: white;
+}
+/*Fonts*/
+@font-face{
+  font-family: 'Sketch3D';
+  src: local('Sketch3D'), url(../fonts/Sketch_3D.otf) format('opentype');
+}
+
+@font-face{
+  font-family: 'ShakaPowHollow';
+  src: local('ShakaPowHollow'), url(../fonts/ShakaPowHollow.ttf) format('opentype');
+}
+
+/*burguer*/
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("../img/menuicon.svg");
+}
+
+.custom-toggler.navbar-toggler {
+  /*border-color: rgb(255, 102, 203);*/
+  justify-self: end;
+}
+
+a{
+  color: #0c0b00;
+  font-family: Sketch3D;
+}
+
+a:hover{
+  color:beige;
+}
+
+/*Sliders*/
+.slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to left, #0c0b00, #d39f0a);
+  z-index: -1;
+}
+
+.slider2{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to left, #4b0101, #1a1614);
+  z-index: -1;
+}
+
+.slider3{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to left, #0c0b00, #58b1d4);
+  z-index: -1;
+}
+
+.slider4{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to left, #0c0b00, #095757);
+  z-index: -1;
+}
+
+.navbar{
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 10%;
+  min-height: 10vh;
+}
+
+.navbar-brand{
+  grid-column: 2/3;
+  font-size: 48px;
+}
+
+.navbar-nav{
+  justify-self: center;
+}
+
+section{
+  align-items: center;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  width: 100%;
+}
+/*.cores*/
+.core, .core2, .core3, .core4{
+  height: 60%;
+  position: relative;
+  width: 100%;
+}
+
+.core img, .core2 img, .core3 img, .core4 img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.core::after{
+  background: #0c0b00;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/*headlines-titles*/
+.headline{
+  position:absolute;
+  font-family: ShakaPowHollow;
+  top:75%;
+  left: 60%;
+  font-size: 150px;
+  transform:translate(-20%, -70%);
+  color:#d39f0a;
+  z-index: 3;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.headlinefire{
+  position:absolute;
+  font-family: ShakaPowHollow;
+  top:75%;
+  left: 10%;
+  font-size: 150px;
+  transform:translate(-20%, -70%);
+  color:#ec4a19;
+  z-index: 3;
+  animation: glowfire 1.5s ease-in-out infinite alternate;
+}
+
+.headlinewater{
+  position:absolute;
+  font-family: ShakaPowHollow;
+  top:75%;
+  left: 60%;
+  font-size: 150px;
+  transform:translate(-20%, -70%);
+  color:#065a74;
+  z-index: 3;
+  animation: glowwater 1.5s ease-in-out infinite alternate;
+}
+
+.headlinegrass{
+  position:absolute;
+  font-family: ShakaPowHollow;
+  top:75%;
+  left: 60%;
+  font-size: 150px;
+  transform:translate(-20%, -70%);
+  color:#327406;
+  z-index: 3;
+  animation: glowgrass 1.5s ease-in-out infinite alternate;
+}
+
+/*Glow-texts*/
+@keyframes glow {
+  from {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.164), 0 0 20px #bbb454;
+  }
+  
+  to {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.123);
+  }
+}
+@keyframes glowfire {
+  from {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.164), 0 0 20px #e43f33;
+  }
+  
+  to {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.123);
+  }
+}
+@keyframes glowwater {
+  from {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.164), 0 0 20px #03364b;
+  }
+  
+  to {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.123);
+  }
+}
+@keyframes glowgrass {
+  from {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.164), 0 0 20px #33f72c;
+  }
+  
+  to {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.123);
+  }
+}
+
+/*Text-responsive*/
+@media screen and (max-width: 1200px) {
+  .headline, .headlinefire, .headlinewater, .headlinegrass {
+    font-size: 80px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 768px) {
+  .headline, .headlinefire, .headlinewater, .headlinegrass{
+    font-size: 50px;
+  }
+}
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+    background: white;
+}
